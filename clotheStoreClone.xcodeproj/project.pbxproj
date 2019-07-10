@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		022EFCFB22CCDCEA002D4D37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022EFCFA22CCDCEA002D4D37 /* AppDelegate.swift */; };
-		022EFCFD22CCDCEA002D4D37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022EFCFC22CCDCEA002D4D37 /* ViewController.swift */; };
 		022EFD0022CCDCEA002D4D37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 022EFCFE22CCDCEA002D4D37 /* Main.storyboard */; };
 		022EFD0322CCDCEA002D4D37 /* clotheStoreClone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 022EFD0122CCDCEA002D4D37 /* clotheStoreClone.xcdatamodeld */; };
-		022EFD0522CCDCF4002D4D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 022EFD0422CCDCF4002D4D37 /* Assets.xcassets */; };
 		022EFD0822CCDCF4002D4D37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 022EFD0622CCDCF4002D4D37 /* LaunchScreen.storyboard */; };
+		022EFD1522CCE019002D4D37 /* SectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022EFD1322CCE019002D4D37 /* SectionTableViewController.swift */; };
+		022EFD1A22CCF068002D4D37 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022EFD1922CCF067002D4D37 /* CustomCell.swift */; };
+		022EFD1E22CCF497002D4D37 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 022EFD1D22CCF497002D4D37 /* CustomCell.xib */; };
+		022EFD2022CCFD99002D4D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 022EFD1F22CCFD99002D4D37 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		022EFCF722CCDCEA002D4D37 /* clotheStoreClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clotheStoreClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		022EFCFA22CCDCEA002D4D37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		022EFCFC22CCDCEA002D4D37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		022EFCFF22CCDCEA002D4D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		022EFD0222CCDCEA002D4D37 /* clotheStoreClone.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = clotheStoreClone.xcdatamodel; sourceTree = "<group>"; };
-		022EFD0422CCDCF4002D4D37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		022EFD0722CCDCF4002D4D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		022EFD0922CCDCF4002D4D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		022EFD1322CCE019002D4D37 /* SectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTableViewController.swift; sourceTree = "<group>"; };
+		022EFD1922CCF067002D4D37 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		022EFD1D22CCF497002D4D37 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		022EFD1F22CCFD99002D4D37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +45,6 @@
 			isa = PBXGroup;
 			children = (
 				022EFCF922CCDCEA002D4D37 /* clotheStoreClone */,
-				022EFCF822CCDCEA002D4D37 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,20 +54,56 @@
 				022EFCF722CCDCEA002D4D37 /* clotheStoreClone.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		022EFCF922CCDCEA002D4D37 /* clotheStoreClone */ = {
 			isa = PBXGroup;
 			children = (
-				022EFCFA22CCDCEA002D4D37 /* AppDelegate.swift */,
-				022EFCFC22CCDCEA002D4D37 /* ViewController.swift */,
-				022EFCFE22CCDCEA002D4D37 /* Main.storyboard */,
-				022EFD0422CCDCF4002D4D37 /* Assets.xcassets */,
-				022EFD0622CCDCF4002D4D37 /* LaunchScreen.storyboard */,
 				022EFD0922CCDCF4002D4D37 /* Info.plist */,
-				022EFD0122CCDCEA002D4D37 /* clotheStoreClone.xcdatamodeld */,
+				022EFCF822CCDCEA002D4D37 /* Products */,
+				022EFD1122CCDD22002D4D37 /* Model */,
+				022EFCFA22CCDCEA002D4D37 /* AppDelegate.swift */,
+				022EFD0F22CCDD0E002D4D37 /* Controller */,
+				022EFD1022CCDD1B002D4D37 /* View */,
+				022EFD1222CCDD67002D4D37 /* Supporting Files */,
 			);
 			path = clotheStoreClone;
+			sourceTree = "<group>";
+		};
+		022EFD0F22CCDD0E002D4D37 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				022EFD1322CCE019002D4D37 /* SectionTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		022EFD1022CCDD1B002D4D37 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				022EFD0622CCDCF4002D4D37 /* LaunchScreen.storyboard */,
+				022EFCFE22CCDCEA002D4D37 /* Main.storyboard */,
+				022EFD1D22CCF497002D4D37 /* CustomCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		022EFD1122CCDD22002D4D37 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				022EFD1922CCF067002D4D37 /* CustomCell.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		022EFD1222CCDD67002D4D37 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				022EFD0122CCDCEA002D4D37 /* clotheStoreClone.xcdatamodeld */,
+				022EFD1F22CCFD99002D4D37 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +165,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				022EFD0822CCDCF4002D4D37 /* LaunchScreen.storyboard in Resources */,
-				022EFD0522CCDCF4002D4D37 /* Assets.xcassets in Resources */,
+				022EFD1E22CCF497002D4D37 /* CustomCell.xib in Resources */,
+				022EFD2022CCFD99002D4D37 /* Assets.xcassets in Resources */,
 				022EFD0022CCDCEA002D4D37 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,7 +179,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				022EFD0322CCDCEA002D4D37 /* clotheStoreClone.xcdatamodeld in Sources */,
-				022EFCFD22CCDCEA002D4D37 /* ViewController.swift in Sources */,
+				022EFD1522CCE019002D4D37 /* SectionTableViewController.swift in Sources */,
+				022EFD1A22CCF068002D4D37 /* CustomCell.swift in Sources */,
 				022EFCFB22CCDCEA002D4D37 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
