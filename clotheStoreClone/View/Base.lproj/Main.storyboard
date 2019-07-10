@@ -20,12 +20,14 @@
                         <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" id="mN1-Nl-8Vn">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <segments>
                                 <segment title="Women"/>
                                 <segment title="Men"/>
                             </segments>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="indexChanged:" destination="gRi-Dj-ZWP" eventType="valueChanged" id="cCF-qq-D9U"/>
+                            </connections>
                         </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="MfD-8E-Dxl">
@@ -43,6 +45,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="segmentControl" destination="mN1-Nl-8Vn" id="TRU-gO-nNk"/>
                         <outlet property="tableView" destination="3TI-ip-vju" id="oLt-md-cyy"/>
                     </connections>
                 </tableViewController>

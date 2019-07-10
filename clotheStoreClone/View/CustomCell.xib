@@ -29,7 +29,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLOTHING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Stv-Ma-4iP">
-                                <rect key="frame" x="36" y="49" width="137" height="37"/>
+                                <rect key="frame" x="36" y="49" width="149" height="37"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -40,10 +40,10 @@
                             <constraint firstAttribute="bottom" secondItem="gOg-4F-dZn" secondAttribute="bottom" constant="1" id="3B6-9x-7k7"/>
                             <constraint firstItem="Stv-Ma-4iP" firstAttribute="leading" secondItem="mNt-Mx-PSG" secondAttribute="leading" constant="36" id="KGg-kE-Fgp"/>
                             <constraint firstAttribute="bottom" secondItem="Stv-Ma-4iP" secondAttribute="bottom" constant="48" id="SRx-7X-qJj"/>
-                            <constraint firstItem="gOg-4F-dZn" firstAttribute="leading" secondItem="Stv-Ma-4iP" secondAttribute="trailing" constant="109" id="pgN-jl-7rh"/>
                             <constraint firstItem="Stv-Ma-4iP" firstAttribute="top" secondItem="mNt-Mx-PSG" secondAttribute="top" constant="49" id="pqH-yW-lNk"/>
                             <constraint firstAttribute="trailing" secondItem="gOg-4F-dZn" secondAttribute="trailing" id="soX-NH-4c5"/>
                             <constraint firstItem="gOg-4F-dZn" firstAttribute="top" secondItem="mNt-Mx-PSG" secondAttribute="top" constant="1" id="vvj-rM-LyK"/>
+                            <constraint firstItem="gOg-4F-dZn" firstAttribute="leading" secondItem="Stv-Ma-4iP" secondAttribute="trailing" constant="97" id="ygq-7i-zye"/>
                         </constraints>
                     </view>
                 </subviews>
