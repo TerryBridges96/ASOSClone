@@ -12,63 +12,58 @@ class SectionTableViewController: UITableViewController {
     
     var segmentControlIndex = 1
     let cellSpacing: CGFloat = 20
+    var tableData = TableData()
     
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.rowHeight = 135.0
-        tableView.separatorStyle = .none
-    
-        setSegmentStyles()
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
         
-        let nib = UINib(nibName: "CustomCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "Cell")
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        
+        setSegmentStyles()
+        setTableStyles()
         
     }
     
+    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+        if gesture.direction == UISwipeGestureRecognizer.Direction.right {
+            segmentControlIndex = 1
+            segmentControl.selectedSegmentIndex = 0
+            print(segmentControlIndex)
+            tableView.reloadData()
+        }
+        else if gesture.direction == UISwipeGestureRecognizer.Direction.left {
+            segmentControlIndex = 2
+            segmentControl.selectedSegmentIndex = 1
+            print(segmentControlIndex)
+            tableView.reloadData()
+        }
+        
+    }
 
     
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             segmentControlIndex = 1
-            print(segmentControlIndex)
         } else {
             segmentControlIndex = 2
-            print(segmentControlIndex)
         }
         
         tableView.reloadData()
     }
     
-    let sectionLabel = ["NEW IN", "CLOTHING", "SHOES", "ACCESSORIES", "ACTIVEWEAR", "FACE + BODY", "LIVING + GIFTS", "BRANDS", "OUTLET"]
-    var menImages: [UIImage] = [
-        UIImage(named: "newin")!,
-        UIImage(named: "clothing")!,
-        UIImage(named: "menShoes")!,
-        UIImage(named: "menAccess")!,
-        UIImage(named: "activewear")!,
-        UIImage(named: "menFace")!,
-        UIImage(named: "menGift")!,
-        UIImage(named: "brands")!,
-        UIImage(named: "menOutlet")!
-    ]
-    
-    var womanImages: [UIImage] = [
-        UIImage(named: "womenNewin")!,
-        UIImage(named: "womenClothing")!,
-        UIImage(named: "womenShoes")!,
-        UIImage(named: "womenAccess")!,
-        UIImage(named: "womenActivewear")!,
-        UIImage(named: "womensFace")!,
-        UIImage(named: "womenGift")!,
-        UIImage(named: "brands")!,
-        UIImage(named: "womenOutlet")!
-    ]
+
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return menImages.count
+        return tableData.menImages.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,17 +73,12 @@ class SectionTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomCell
         
-        cell.labelCell.text = sectionLabel[indexPath.section]
+        cell.labelCell.text = tableData.sectionLabel[indexPath.section]
         
         if segmentControlIndex == 1 {
-            
-            cell.imgCell.image = womanImages[indexPath.section]
-            print(segmentControlIndex)
-            
+            cell.imgCell.image = tableData.womanImages[indexPath.section]
         } else {
-            
-            cell.imgCell.image = menImages[indexPath.section]
-            print(segmentControlIndex)
+            cell.imgCell.image = tableData.menImages[indexPath.section]
             
         }
         
@@ -99,15 +89,24 @@ class SectionTableViewController: UITableViewController {
         return cellSpacing
     }
     
+    func setTableStyles() {
+        let nib = UINib(nibName: "CustomCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "Cell")
+        
+        tableView.rowHeight = 135.0
+        tableView.separatorStyle = .none
+        
+    }
+    
     
     func setSegmentStyles() {
         segmentControl.setTitleTextAttributes([
-            NSAttributedString.Key.font : UIFont(name: "DINCondensed-bold", size: 22),
+            NSAttributedString.Key.font : UIFont(name: "DINCondensed-bold", size: 24),
             NSAttributedString.Key.foregroundColor : UIColor.lightGray
             ], for: .normal)
         
         segmentControl.setTitleTextAttributes([
-            NSAttributedString.Key.font : UIFont(name: "DINCondensed-Bold", size: 18),
+            NSAttributedString.Key.font : UIFont(name: "DINCondensed-bold", size: 18),
             NSAttributedString.Key.foregroundColor: UIColor.orange
             ], for: .selected)
         

@@ -45,7 +45,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="segmentControl" destination="mN1-Nl-8Vn" id="TRU-gO-nNk"/>
+                        <outlet property="segmentControl" destination="mN1-Nl-8Vn" id="NPM-xQ-0Aq"/>
                         <outlet property="tableView" destination="3TI-ip-vju" id="oLt-md-cyy"/>
                     </connections>
                 </tableViewController>
