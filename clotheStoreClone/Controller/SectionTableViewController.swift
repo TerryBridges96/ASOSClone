@@ -11,7 +11,7 @@ import UIKit
 class SectionTableViewController: UITableViewController {
     
     var segmentControlIndex = 1
-    let cellSpacing: CGFloat = 20
+    let cellSpacing: CGFloat = 155
     var tableData = TableData()
     
     @IBOutlet weak var segmentControl: UISegmentedControl!
@@ -37,13 +37,11 @@ class SectionTableViewController: UITableViewController {
         if gesture.direction == UISwipeGestureRecognizer.Direction.right {
             segmentControlIndex = 1
             segmentControl.selectedSegmentIndex = 0
-            print(segmentControlIndex)
             tableView.reloadData()
         }
         else if gesture.direction == UISwipeGestureRecognizer.Direction.left {
             segmentControlIndex = 2
             segmentControl.selectedSegmentIndex = 1
-            print(segmentControlIndex)
             tableView.reloadData()
         }
         
@@ -60,42 +58,53 @@ class SectionTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return tableData.menImages.count
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return tableData.sectionLabel.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomCell
         
-        cell.labelCell.text = tableData.sectionLabel[indexPath.section]
+        cell.labelCell.text = tableData.sectionLabel[indexPath.row]
         
         if segmentControlIndex == 1 {
-            cell.imgCell.image = tableData.womanImages[indexPath.section]
+            cell.imgCell.image = tableData.womanImages[indexPath.row]
         } else {
-            cell.imgCell.image = tableData.menImages[indexPath.section]
+            cell.imgCell.image = tableData.menImages[indexPath.row]
             
         }
         
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellSpacing
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        performSegue(withIdentifier: "segue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! ClothesView
+
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.dataRecieved = tableData.sectionLabel[indexPath.row]
+            
+            if segmentControlIndex == 1 {
+                destinationVC.imageRecieved = tableData.womanImages[indexPath.row]
+            } else if segmentControlIndex == 2 {
+                destinationVC.imageRecieved = tableData.menImages[indexPath.row]
+            }
+        }
     }
     
     func setTableStyles() {
         let nib = UINib(nibName: "CustomCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cell")
-        
         tableView.rowHeight = 135.0
         tableView.separatorStyle = .none
-        
     }
     
     

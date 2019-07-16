@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -44,14 +45,56 @@
                             <outlet property="delegate" destination="gRi-Dj-ZWP" id="pbT-c5-uWd"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="4ga-25-GUl"/>
                     <connections>
                         <outlet property="segmentControl" destination="mN1-Nl-8Vn" id="NPM-xQ-0Aq"/>
                         <outlet property="tableView" destination="3TI-ip-vju" id="oLt-md-cyy"/>
+                        <segue destination="hyB-bY-ni7" kind="show" identifier="segue" id="gNh-bf-C1d"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psj-tm-7lu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="808" y="101"/>
+        </scene>
+        <!--Clothes View-->
+        <scene sceneID="trm-gA-AEx">
+            <objects>
+                <viewController id="hyB-bY-ni7" customClass="ClothesView" customModule="clotheStoreClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BwE-ZB-g0d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abR-hZ-EFb">
+                                <rect key="frame" x="90" y="112" width="178" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uc0-wF-Lhw">
+                                <rect key="frame" x="67" y="218" width="240" height="217"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdz-xU-BIZ">
+                                <rect key="frame" x="22" y="544" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="gRi-Dj-ZWP" kind="show" id="9zG-od-n7z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="AE6-6Y-wNW"/>
+                    </view>
+                    <connections>
+                        <outlet property="sectionImage" destination="Uc0-wF-Lhw" id="2SF-FK-K7W"/>
+                        <outlet property="sectionTitle" destination="abR-hZ-EFb" id="Ume-MF-VWb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uxc-9H-j8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1669.5999999999999" y="99.400299850074973"/>
         </scene>
     </scenes>
 </document>

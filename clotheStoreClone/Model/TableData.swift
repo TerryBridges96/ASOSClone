@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 
 class TableData {
+    
     let sectionLabel = ["NEW IN", "CLOTHING", "SHOES", "ACCESSORIES", "ACTIVEWEAR", "FACE + BODY", "LIVING + GIFTS", "BRANDS", "OUTLET"]
     
     var menImages: [UIImage] = [
@@ -27,4 +28,5 @@ class TableData {
         UIImage(named: "brands")!,
         UIImage(named: "womenOutlet")!
     ]
+    
 }
